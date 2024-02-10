@@ -1,0 +1,26 @@
+% Saiprasad Patil - 60001200090
+a = imread('cameraman.tif');
+[r, c] = size(a);
+L = 255;
+r1 = 50;
+r2 = 100;
+s = 0;
+
+for i = 1:r
+    for j =1:c
+        if 0 < a(i,j) && a(i,j) < r1
+            s(i,j) = a(i,j);
+        elseif r1<= a(i,j) && a(i,j) <= r2
+            s(i,j) = L;
+        elseif  r2 < a(i,j) && a(i,j) <= L
+            s(i,j) = a(i,j);
+        end
+
+    end
+end
+
+
+figure(1);
+imshow(a);
+figure(2);
+imshow(uint8(s));
