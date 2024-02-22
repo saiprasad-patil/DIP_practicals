@@ -1,9 +1,8 @@
 clc
 clear all
-%Aditi Dubey - 60001200119
-%Yash Jain - 60001200112
+%Saiprasad Patil - 60001200090
 
-c = imread('C:\Users\djsce.student\MATLAB\Projects\DIP_PSY\images\watermark_119.png')
+c = imread('C:\Users\djsce.student\MATLAB\Projects\DIP_PSY\images\watermark.png')
 m = imresize(c,[256,256]);
 f1 = figure;
 f1 = imshow(m)
