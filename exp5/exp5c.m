@@ -1,8 +1,8 @@
-
+% Saiprasad Patil 60001200090
 clc;
 clear all;
 a = imread("wagon.jpg");
-figure(1);
+subplot(3,2,1);
 imshow(a);
 title("Original");
 [x,y,z] = size(a);
@@ -16,7 +16,7 @@ for i = 2:x-2
         SobelR(i,j) = Pr;
     end
 end
-figure(2);
+subplot(3,2,2);
 imshow(SobelR);
 title("R-plane after Sobel filter");
 for i = 2:x-2
@@ -27,7 +27,7 @@ for i = 2:x-2
         SobelG(i,j) = Pg;
     end
 end
-figure(3);
+subplot(3,2,3);
 imshow(SobelG);
 title("G-plane after Sobel filter");
 for i = 2:x-2
@@ -38,10 +38,10 @@ for i = 2:x-2
         SobelB(i,j) = Pb;
     end
 end
-figure(4);
+subplot(3,2,4);
 imshow(SobelB);
 title("B-plane after Sobel filter");
 Sobel = cat(3,SobelR,SobelG,SobelB);
-figure(5);
+subplot(3,2,5);
 imshow(Sobel);
 title("Image after Sobel filter");

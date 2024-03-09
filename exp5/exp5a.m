@@ -1,7 +1,9 @@
+% Saiprasad Patil 60001200090
 clc;
 clear all;
 a = imread("wagon.jpg");
-figure(1);
+plot(a)
+subplot(3,2,1);
 imshow(a);
 title("Original");
 [x,y,z] = size(a);
@@ -15,9 +17,9 @@ for i = 1:x-1
         RobertsR(i,j) = Rr;
     end
 end
-% figure(2);
-% imshow(RobertsR);
-% title("R-plane after Roberts filter");
+subplot(3,2,2);
+imshow(RobertsR);
+title("R-plane after Roberts filter");
 for i = 1:x-1
     for j = 1:y-1
         Rgx = a(i,j,2)*robertsX(1) + a(i,j+1,2)*robertsX(2) + a(i+1,j,2)*robertsX(3) + a(i+1,j+1,2)*robertsX(4);
@@ -26,9 +28,9 @@ for i = 1:x-1
         RobertsG(i,j) = Rg;
     end
 end
-% figure(3);
-% imshow(RobertsG);
-% title("G-plane after Roberts filter");
+subplot(3,2,3);
+imshow(RobertsG);
+title("G-plane after Roberts filter");
 for i = 1:x-1
     for j = 1:y-1
         Rbx = a(i,j,3)*robertsX(1) + a(i,j+1,3)*robertsX(2) + a(i+1,j,3)*robertsX(3) + a(i+1,j+1,3)*robertsX(4);
@@ -37,10 +39,10 @@ for i = 1:x-1
         RobertsB(i,j) = Rb;
     end
 end
-% figure(4);
-% imshow(RobertsB);
-% title("B-plane after Roberts filter");
+subplot(3,2,4);
+imshow(RobertsB);
+title("B-plane after Roberts filter");
 Roberts = cat(3,RobertsR,RobertsG,RobertsB);
-figure(5);
+subplot(3,2,5);
 imshow(Roberts);
 title("Image after Roberts filter");

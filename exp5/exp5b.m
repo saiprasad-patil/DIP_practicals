@@ -1,8 +1,8 @@
-
+% Saiprasad Patil 60001200090
 clc;
 clear all;
 a = imread("wagon.jpg");
-figure(1);
+subplot(3,2,1);
 imshow(a);
 title("Original");
 [x,y,z] = size(a);
@@ -16,7 +16,7 @@ for i = 2:x-2
         PrewittR(i,j) = Pr;
     end
 end
-figure(2);
+subplot(3,2,2);
 imshow(PrewittR);
 title("R-plane after Prewitt filter");
 for i = 2:x-2
@@ -27,7 +27,7 @@ for i = 2:x-2
         PrewittG(i,j) = Pg;
     end
 end
-figure(3);
+subplot(3,2,3);
 imshow(PrewittG);
 title("G-plane after Prewitt filter");
 for i = 2:x-2
@@ -38,10 +38,10 @@ for i = 2:x-2
         PrewittB(i,j) = Pb;
     end
 end
-figure(4);
+subplot(3,2,4);
 imshow(PrewittB);
 title("B-plane after Prewitt filter");
 Prewitt = cat(3,PrewittR,PrewittG,PrewittB);
-figure(5);
+subplot(3,2,5);
 imshow(Prewitt);
 title("Image after Prewitt filter");
