@@ -1,3 +1,4 @@
+% Saiprasad Patil 60001200090
 clc;
 a = imread("pout.tif");
 figure(1);

@@ -2,7 +2,7 @@
 clc;
 clear all;
 a = imread("wagon.jpg");
-plot(a)
+figure(1)
 subplot(3,2,1);
 imshow(a);
 title("Original");
@@ -46,3 +46,5 @@ Roberts = cat(3,RobertsR,RobertsG,RobertsB);
 subplot(3,2,5);
 imshow(Roberts);
 title("Image after Roberts filter");
+
+
