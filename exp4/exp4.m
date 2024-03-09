@@ -25,6 +25,7 @@ ylabel('Frequency');
 
 sumArray = sum(pixel_freq,2);
 [rpf,cpf] = size(pixel_freq);
+
 for i = 1:cpf
     pdf(i) = pixel_freq(i) / sumArray;
 end
