@@ -19,23 +19,23 @@ for x=2:1:r-1
                     if a(p,q)==a(p,q-1)
                         g(p,q-1)=1;
                     end
-                    if a(p,q)==a(p-1,q) 
+                    if a(p,q)==a(p-1,q)
                         g(p-1,q)=1;
                     end
                     if a(p,q)==a(p+1,q)
                         g(p+1,q)=1;
                     end
-                end 
+                end
             end
         end
     end
 end
- 
+
 figure(2);
 imshow(g);
-subplot(1,2,1) 
+subplot(1,2,1)
 imshow(a);
 title('Original Image');
-subplot(1,2,2) 
+subplot(1,2,2)
 imshow(g);
 title('Output');
